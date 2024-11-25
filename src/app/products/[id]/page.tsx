@@ -3,11 +3,13 @@ import { Product } from "../../interface/Product";
 import { getProductById } from "../../services/getProductById";
 import Link from "next/link";
 
-export default async function ProductDetail({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface ProductDetailProps {
+  params: {
+    id: string; 
+  };
+}
+
+export default async function ProductDetail({ params }: ProductDetailProps) {
   const product: Product | null = await getProductById(params.id);
 
   if (!product) {
