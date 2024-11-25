@@ -8,6 +8,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { Product } from "./interface/Product";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -86,7 +87,7 @@ export default function Home() {
           </thead>
 
           <tbody className="text-sm">
-            {products.map((product: any) => (
+            {products.map((product: Product) => (
               <tr className="odd:bg-gray-100 even:bg-gray-300" key={product.id}>
                 <th
                   scope="row"

@@ -52,6 +52,8 @@ export default function EditProduct({
           return;
         }
         setProduct(fetchedProduct);
+        console.log(product);
+
         setFormData({
           id: fetchedProduct.id,
           name: fetchedProduct.name,
@@ -90,8 +92,9 @@ export default function EditProduct({
 
     try {
       const updatedProduct = await updateProduct(id, formData);
+      console.log(updatedProduct);
       router.push(`/`);
-    } catch (error) {
+    } catch {
       setError("Failed to update product");
     }
   };

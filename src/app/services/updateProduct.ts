@@ -19,7 +19,7 @@ export const updateProduct = async (
   try {
     await updateDoc(docRef, updatedData);
     return { ...updatedData, id };
-  } catch (error) {
+  } catch {
     throw new Error("Error updating product");
   }
 };
